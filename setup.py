@@ -32,7 +32,7 @@ setup(
         author="Gabriel Mizuno",
         packages=find_packages(exclude=["tests"]),
         include_package_data=True,
-        install_requires=read_requirements("requirements.txt"),
+        install_requires=read_requirements("requirements-dev.txt"),
         entry_points={
             "console_scripts":["pamps = pamps.cli:main"]
         }

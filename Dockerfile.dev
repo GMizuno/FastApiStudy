@@ -6,8 +6,9 @@ RUN groupadd app && useradd -g app app
 
 ENV APP_HOME=/home/app/api
 RUN mkdir -p $APP_HOME
-COPY . $APP_HOME
+WORKDIR $APP_HOME
 
+COPY . $APP_HOME
 RUN pip install -r requirements-dev.txt
 RUN pip install -e .
 
