@@ -273,3 +273,7 @@ cython_debug/
 pamps/default.toml
 .secrets.toml
 settings.toml
+
+
+# idea
+.idea
