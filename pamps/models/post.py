@@ -1,4 +1,8 @@
-from sqlmodel import SQLModel
-from .user import User
+from typing import Optional
+from sqlmodel import Field, SQLModel
 
-__all__ = ["User", "SQLModel"]
+
+class Post(SQLModel, table=True):
+    """Represents the Post Model"""
+
+    
