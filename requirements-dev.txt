@@ -86,3 +86,4 @@ typing-extensions==4.4.0
     #   sqlalchemy2-stubs
 uvicorn==0.20.0
     # via -r requirements.in
+psycopg2-binary==2.9.5
