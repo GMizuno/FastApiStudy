@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # Start environment with docker-compose
 PAMPS_DB=pamps_test docker-compose up -d
 
@@ -6,7 +6,7 @@ PAMPS_DB=pamps_test docker-compose up -d
 sleep 5
 
 # Ensure database is clean
-docker-compose exec api pamps reset-db -f
+docker-compose exec api pamps reset-db --force
 docker-compose exec api alembic stamp base
 
 # run migrations

@@ -61,4 +61,4 @@ def create_user(email: str, username: str, password: str):
 def reset_db(force: bool = typer.Option(False, "--force", help="Run with no confirmation")):
     force = force or typer.confirm("Are tou sure?")
     if force:
-        SQLModel.metadata.drop_all()
+        SQLModel.metadata.drop_all(engine)
