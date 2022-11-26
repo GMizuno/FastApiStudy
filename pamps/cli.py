@@ -4,7 +4,7 @@ from rich.table import Table
 from sqlmodel import Session, select
 from .config import settings
 from .db import engine
-from .models import User
+from .models import Post, User
 
 main = typer.Typer(name='Pamps CLI')
 
@@ -13,11 +13,12 @@ main = typer.Typer(name='Pamps CLI')
 def shell():
     """Opens interactive shell"""
     _vars = {
-        "settings":settings,
-        "engine"  :engine,
-        "select"  :select,
-        "session" :Session(engine),
-        "User"    :User,
+            "settings":settings,
+            "engine":engine,
+            "select":select,
+            "session":Session(engine),
+            "User":User,
+            "Post":Post,
     }
     typer.echo(f"Auto imports: {list(_vars.keys())}")
     try:
