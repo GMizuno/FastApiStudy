@@ -13,12 +13,12 @@ main = typer.Typer(name='Pamps CLI')
 def shell():
     """Opens interactive shell"""
     _vars = {
-            "settings":settings,
-            "engine":engine,
-            "select":select,
-            "session":Session(engine),
-            "User":User,
-            "Post":Post,
+            "settings": settings,
+            "engine": engine,
+            "select": select,
+            "session": Session(engine),
+            "User": User,
+            "Post": Post,
     }
     typer.echo(f"Auto imports: {list(_vars.keys())}")
     try:

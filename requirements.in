@@ -9,4 +9,4 @@ rich
 sqlmodel
 typer
 uvicorn
-dynaconf                    
+dynaconf
