@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional, List, TYPE_CHECKING
 from sqlmodel import Field, SQLModel,  Relationship
 from pamps.security import HashedPassword
@@ -33,3 +34,11 @@ class UserRequest(BaseModel):
     password: str
     avatar: Optional[str] = None
     bio: Optional[str] = None
+
+
+class Social(SQLModel, table=True):
+    """Represents the Social Model"""
+    id: Optional[int] = Field(default=None, primary_key=True)
+    user_from_id: Optional[int] = Field(foreign_key="user.id")
+    user_to_id: Optional[int] = Field(foreign_key="user.id")
+    date: datetime = Field(default_factory=datetime.utcnow, nullable=False)
